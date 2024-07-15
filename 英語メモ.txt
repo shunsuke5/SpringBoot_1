@@ -29,9 +29,6 @@ all of ～
     例:all of the matched route's assigned middleware,
     訳:
 
-by the ～
-　→ ～によって
-
 send back through ～
 　→ ～を通して送り返す
 
@@ -63,11 +60,32 @@ production server
 To make this a cinch
 　→ これを作るのは簡単です。cinchに「容易」のような意味がある。
 
-by ～
-　→ ～によって。
-
-from scratch
+From scratch
 　→ ゼロから、一から
+
+as part of～
+　→ ～の一部として
+
+point to ～
+　→ ～を指し示す
+
+At this point,
+　→ この時点で
+
+a number of ～
+　→ いくつかの～
+
+before that
+　→ それ以前は、その前に
+
+right now,
+　→ 今すぐ、現在は
+
+By default,
+　→ デフォルトでは
+
+going on
+　→ 続いている
 
 
 
