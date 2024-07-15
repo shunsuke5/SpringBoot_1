@@ -1,0 +1,57 @@
+SprintBootメモ
+
+{{{ Installing Spring Boot }}}
+
+[Installing the Spring Boot CLI]
+
+・CLIを使わなくてもspringbootは実行できるが、CLIはspringアプリをIDE無し手早く入手できる方法である。
+
+{{{ Developing Your First Spring Boot Application }}}
+
+・もし特定の問題を解決したい場合、以下のサイトを参考にするとよい。
+　https://spring.io/
+　https://spring.io/guides
+
+・MavenかGradleをインストールする必要があるらしいので、Gradleを選択。
+
+[Setting up the project with Gradle]
+
+・開始するには build.gradleファイルを作成する必要がある。build.gradleは、プロジェクトをビルドするスクリプト。
+
+　C:\spring-3.3.1 配下にbuild.gradleを置き、その場所で「gradle classes」を実行すると、どうやら想定通りの動きができたよう。
+
+[Adding Classpath Dependencies]
+
+・springbootはいくつかの「スターター」を提供しており、これによりクラスパスにjarを追加することができる。
+　スターターは特定タイプのアプリを開発するのに必要となりそうな依存関係を提供する。
+
+・大抵のbootアプリは、Gradleの org.springframework.boot プラグインを使用する。
+　このプラグインは、役に立つデフォルト機能とgradleタスクを提供する。
+　io.spring.dependency-management プラグインは、依存関係管理を提供しているため、
+　blessed依存関係において、version タグを省略することができる。
+
+　webアプリを開発するには、spring-boot-starter-web 依存関係を追加する。
+　その前に、gradle dependencies コマンドで現在の状態を見ることができる。
+　gradle dependencies コマンドは、プロジェクトの依存関係をツリー状で表示する。
+　現在は、プロジェクトは依存関係を持っていない。必要な依存関係を追加するには、
+　build.gradleファイルのdependencies{}内に、spring-boot-starter-web 依存関係を追加する。
+　追加してからもう一度 gradle dependencies コマンドを実行すると、
+　tomcatサーバーとspringbootを含む多くの追加された依存関係があることを確認できる。
+
+[Writing the Code]
+
+・アプリを完成させるためには、1つのjavaファイルを作成する必要がある。
+　デフォルトでは、src/main/javaからソースをコンパイルするため、
+　このディレクトリ構造を作成し、その配下にファイルを作成する必要がある。
+
+[The @RestController and @RequestMapping Annotations]
+
+・
+
+Writing the Code の コード書き終えたところ から
+
+==============================================================================================================================
+
+エラーやミス、わからなかったことなど
+
+・
