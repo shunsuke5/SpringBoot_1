@@ -68,7 +68,16 @@ The @SpringBootApplication Annotation
 
 The "main" Method
 
-・
+・このmainメソッドは、runメソッドを呼び出すことでSpringApplicationクラスをspringbootに委譲している。
+　SpringApplicationは順番にアプリを起動し、springを開始し、自動設定されたtomcat webサーバーを開始する。
+　私たちは SpringApplicationにそれが重要なspringコンポーネントであることを伝えるため、
+　runメソッドに引数としてMyApplication.class を通す必要がある。
+　また、args配列も渡され、任意のコマンドライン引数が公開される。
+
+Running the Example
+
+・Gradleのプラグインである org.springgramework.boot を使用したので、アプリを開始できる便利な bootRun が使用可能である。
+　ルートプロジェクトディレクトリで gradle bootRun コマンドを実行してアプリを開始する。
 
 The "main" Method から
 
@@ -91,5 +100,25 @@ The "main" Method から
 ==============================================================================================================================
 
 エラーやミス、わからなかったことなど
+
+・Running the exampleにて、gradle bootRun コマンドを実行すると、
+
+    FAILURE: Build failed with an exception.
+
+    * What went wrong:
+    Execution failed for task ':bootRun'.
+    > Failed to calculate the value of task ':bootRun' property 'mainClass'.
+       > Main class name has not been configured and it could not be resolved from classpath
+
+　のエラーが出る。
+　　→ MyApplication.javaを作成する場所を、「C:\Gradle\gradle-8.7\src\main\java」配下に作成していたが、
+　　　よく考えたらおかしいと思い、springのルートディレクトリの方に「C:\spring-3.3.1\src\main\java」の構造を作成し、
+　　　その配下にMyApplication.javaファイルを作成して gradle bootRun を実行すると、
+　　　チュートリアルと同じspringの絵みたいなものが出てくるところまでは進むことができた。
+　　　あと、一応owner配下に.gradleフォルダがあり、それが参照されて変な動きをしているのではないかと思ったのそれは削除している。
+　　　(このowner/.gradleは、最初に間違えてownerのところでgradleをインストールやらなんやらしてしまったのが原因)
+
+　しかし、上記のエラーは無くなったものの、新しいエラーが出た。
+
 
 ・
